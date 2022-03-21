@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizFragment">
+
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:id="@+id/cl_quiz"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?colorOnPrimary"
+        android:alpha="0.5"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_margin="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        android:visibility="gone"
+        app:lottie_rawRes="@raw/loading" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/quiz_rv"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:listitem="@layout/preview_item" />
+
+  <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/submit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="30dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      android:src="@drawable/icons8_checkmark"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent" />
+
+  <ImageView
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:background="?colorSecondary"
+      app:layout_constraintBottom_toBottomOf="@id/tv_submit"
+      app:layout_constraintEnd_toEndOf="@id/tv_submit"
+      app:layout_constraintStart_toStartOf="@id/tv_submit"
+      app:layout_constraintTop_toTopOf="@id/tv_submit" />
+
+  <TextView
+      android:id="@+id/tv_submit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="submit"
+      android:textSize="20dp"
+      android:textColor="?colorOnPrimary"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/submit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

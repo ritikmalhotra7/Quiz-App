@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main.xml"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.quizheist.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_buyingDialog"
+            app:destination="@id/buyingDialog" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.quizheist.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.quizheist.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <argument
+            android:name="quizElements"
+            app:argType="com.example.quizheist.model.QuizElements" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.example.quizheist.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_termsFragment"
+            app:destination="@id/termsFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_privacyPolicyFragment"
+            app:destination="@id/privacyPolicyFragment" />
+        <action
+            android:id="@+id/action_settingFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/buyingDialog"
+        android:name="com.example.quizheist.BuyingDialog"
+        android:label="BuyingDialog" />
+    <fragment
+        android:id="@+id/termsFragment"
+        android:name="com.example.quizheist.TermsFragment"
+        android:label="TermsFragment" />
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.example.quizheist.PrivacyPolicyFragment"
+        android:label="fragment_terms"
+        tools:layout="@layout/fragment_terms" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.quizheist.ChatFragment"
+        android:label="ChatFragment" />
+</navigation>

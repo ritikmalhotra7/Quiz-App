@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.quizheist">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <application
+        android:name=".MainApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_undraw_questions_re_1fy7"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/ic_undraw_questions_re_1fy7"
+        android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
+        android:screenOrientation = "sensorPortrait"
+        android:theme="@style/Theme.QuizHeist">
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.QuizHeist.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.QuizHeist.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+    </application>
+</manifest>
